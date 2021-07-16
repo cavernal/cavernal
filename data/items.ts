@@ -3773,27 +3773,27 @@ registerItem(<Item>{
 			var lock = randomInteger(0, 5);
 		}
 		if (lock == 0) {
-			d.strengthWithPoints = 99999999;
+			d.strengthWithPoints = 99999;
 			outSpace();
 			outLine('It made you unable to upgrade strength anymore');
 		} else if (lock == 1) {
-			d.dexterityWithPoints = 99999999;
+			d.dexterityWithPoints = 99999;
 			outSpace();
 			outLine('It made you unable to upgrade dexterity anymore');
 		} else if (lock == 2) {
-			d.agilityWithPoints = 99999999;
+			d.agilityWithPoints = 99999;
 			outSpace();
 			outLine('It made you unable to upgrade agility anymore');
 		} else if (lock == 3) {				
-			d.constitutionWithPoints = 99999999;
+			d.constitutionWithPoints = 99999;
 			outSpace();
 			outLine('It made you unable to upgrade constitution anymore');
 		} else if (lock == 4) {
-			d.vitalityWithPoints = 99999999;
+			d.vitalityWithPoints = 99999;
 			outSpace();
 			outLine('It made you unable to upgrade vitality anymore');
 		} else if (lock == 5) {
-			d.intelligenceWithPoints = 99999999;
+			d.intelligenceWithPoints = 99999;
 			outSpace();
 			outLine('It made you unable to upgrade intelligence anymore');
 		}					
@@ -3864,10 +3864,10 @@ registerItem(<Item>{
 		outSpace();
 		outLine('It made you unable to upgrade intelligence, constitution, vitality, or strength anymore');
 		d.intelligence += 20;
-		d.intelligenceWithPoints = 99999999;
-		d.constitutionWithPoints = 99999999;
-		d.vitalityWithPoints = 99999999;
-		d.strengthWithPoints = 99999999;
+		d.intelligenceWithPoints = 99999;
+		d.constitutionWithPoints = 99999;
+		d.vitalityWithPoints = 99999;
+		d.strengthWithPoints = 99999;
 		return true;
 	},
 });
@@ -3892,10 +3892,10 @@ registerItem(<Item>{
 		d.dexterity += 5;
 		d.agility += 5;
 		d.constitution += 5;
-		d.strengthWithPoints = 99999999;
-		d.dexterityWithPoints = 99999999;
-		d.agilityWithPoints = 99999999;
-		d.constitutionWithPoints = 99999999;
+		d.strengthWithPoints = 99999;
+		d.dexterityWithPoints = 99999;
+		d.agilityWithPoints = 99999;
+		d.constitutionWithPoints = 99999;
 		return true;
 	},
 });
@@ -3994,12 +3994,12 @@ registerItem(<Item>{
 		d.constitution = max;
 		d.vitality = max;
 		d.intelligence = max;
-		d.dexterityWithPoints = 99999999;
-		d.agilityWithPoints = 99999999;
-		d.intelligenceWithPoints = 99999999;
-		d.constitutionWithPoints = 99999999;
-		d.vitalityWithPoints = 99999999;
-		d.strengthWithPoints = 99999999;
+		d.dexterityWithPoints = 99999;
+		d.agilityWithPoints = 99999;
+		d.intelligenceWithPoints = 99999;
+		d.constitutionWithPoints = 99999;
+		d.vitalityWithPoints = 99999;
+		d.strengthWithPoints = 99999;
 		return true;
 	},
 });
