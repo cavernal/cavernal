@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d "imgs" ]; then
+  echo '"imgs" directory not available, skipping generating placeholder images'
+  exit
+fi
 rm -rf imgsplaceholder
 mkdir -p imgsplaceholder
 for f in `find imgs -name \*.png -type f`;do
