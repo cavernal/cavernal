@@ -1,0 +1,614 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: fontlocal, monospace;
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+	overflow-x: hidden;
+	overflow-y: hidden;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+div {
+	vertical-align: middle;
+
+  /* Make all text non-selectable */
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.all {
+	padding: 0px;
+	margin: 0px;
+	border-width: 0px;
+	width: 1172px;
+	height: 860px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -430px; /* half width */
+	margin-left: -586px; /* half height */
+}
+
+.left {
+	display: inline-block;
+	width: 800px;
+}
+
+.right {
+	display: inline-block;
+	width: 372px;
+}
+
+.button {
+	display: inline;
+	cursor: pointer;
+}
+
+.restartline {
+  vertical-align: top;
+	display: inline-block;
+}
+	
+.buttonrestart {
+  vertical-align: top;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.asciilogo {
+	font-size: 11px;
+	line-height: 12px;
+	white-space: pre;
+}
+
+.logotext {
+	white-space: pre;
+}
+
+.logotext a {
+ color: white;
+}
+
+/* Scrollbar style */
+div::-webkit-scrollbar {
+	width: 12px;
+}
+
+div::-webkit-scrollbar-track {
+	background: #111111;
+}
+
+div::-webkit-scrollbar-thumb {
+	background: #999999;
+	border-radius: 5px;
+}
+
+div {
+  scrollbar-color: #999999 #111111;
+  scrollbar-width: 12px;
+}
+
+/* Data export */
+.dataexport {
+	width: 100%;
+	height: 200px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	word-wrap: break-word;
+	font-size: 8px;
+  /* Make selectable */
+  -webkit-touch-callout: auto; /* iOS Safari */
+    -webkit-user-select: auto; /* Safari */
+     -khtml-user-select: auto; /* Konqueror HTML */
+       -moz-user-select: auto; /* Old versions of Firefox */
+        -ms-user-select: auto; /* Internet Explorer/Edge */
+            user-select: auto; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+/* Common */
+.hover {
+	display: inline;
+}
+
+.img {
+	display: inline-block;
+	position: relative;
+	border-width: 1px;
+	border-color: #888888;
+	border-style: solid;
+	margin: 1px;
+	background-color: #888888;
+}
+
+.imgtransparent {
+	display: inline-block;
+	position: absolute;
+	border-width: 0px;
+	background-color: rgba(0,0,0,0.0);
+	pointer-events: none;
+}
+
+.shortcut {
+	position: absolute;
+	left: 3px;
+	bottom: 1px;
+}
+
+.buttonimage {
+	display: inline-block;
+	background-color: transparent;
+	position: relative;
+}
+
+.buttontext {
+	display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+	font-size: 15px;
+	text-align: center;
+	width: 100%;
+}
+
+.smallbuttonimage {
+	display: inline-block;
+	background-color: transparent;
+	position: relative;
+	width: 179px;
+	height: 36px;
+	background-size: 179px 36px;
+}
+
+.smallbuttontext {
+	display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+	text-align: center;
+	width: 100%;
+}
+
+.totheright {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+
+/* Panes */
+.version, .inventory, .console, .actions {
+	border-width: 1px;
+	border-color: #222222;
+	border-style: solid;
+	padding: 5px;
+	background: #333333;
+	position: relative;
+}
+
+a {
+  color: #777777;
+}
+
+.upperbar {
+	height: 263px;
+	border-width: 1px;
+	border-color: #222222;
+	border-style: solid;
+	background: #333333;
+}
+
+.character, .info {
+	display: inline-block;
+	border-width: 0px;
+	height: 253px;
+	padding: 3px;
+}
+
+.character {
+	width: 535px;
+}
+
+.info {
+	display: inline-block;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-left-color: #222222;
+	border-left-style: solid;
+	padding: 6px;
+	width: 222px;
+}
+
+.version {
+	background: #222222;
+	font-size: 9px;
+	height: 10px;
+	color: #777777;
+	text-align: right;
+  text-shadow: 0 0 black;
+	vertical-align: middle;
+}
+
+.inventory {
+	overflow-y: scroll;
+	height: 824px;
+	padding-left: 8px;
+}
+
+.console {
+	overflow-y: scroll;
+	height: 379px;
+}
+
+.actions {
+	height: 168px;
+}
+
+.emptyline {
+	height: 9px;
+}
+
+/* Character */
+.num {
+	display: inline-block;
+	width: 29px;
+}
+
+.numplus {
+	color: #00AA00;
+	display: inline-block;
+	width: 29px;
+}
+
+.numplusonly {
+	color: #00AA00;
+	display: inline-block;
+}
+
+.numminus {
+	color: #DD1111;
+	display: inline-block;
+	width: 29px;
+}
+
+.numminusonly {
+	color: #DD1111;
+	display: inline-block;
+}
+
+.plusbutton {
+	border: 0px;
+	position: absolute;
+	right: 1px;
+	bottom: 1px;
+}
+
+.portrait {
+	display: inline-block;
+	border-width: 1px;
+	border-color: #888888;
+	border-style: solid;
+	margin: 8px;
+}
+
+.blackbg {
+	background-color: #000000;
+}
+
+.portraitstats {
+	display: inline-block;
+}
+
+.portraitblock {
+	display: block;
+}
+
+.levelstats {
+	display: inline-block;
+}
+
+.bars {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.equipped {
+	margin-top: 6px;
+	padding-left: 3px;
+}
+
+.level {
+	display: inline-block;
+}
+
+.badge {
+	border-width: 0;
+	margin-right: 5px;
+	display: inline-block;
+	position: relative;
+}
+
+.levelnum {
+	font-size: 30px;
+	display: inline-block;
+	bottom: 20px;
+	color: gold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	position: absolute;
+}
+
+.experience {
+	margin-left: 10px;
+	display: inline-block;
+	position: absolute;
+	bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.attrpoints {
+	margin-left: 10px;
+}
+
+.bar {
+	width: 214px;
+	height: 15px;
+	background-color: #AAAAAA; /* override this */
+	border: 2px;
+	border-color: #888888;
+	border-style: inset;
+	margin-left: 5px;
+	margin-right: 5px;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+
+.minibar {
+	width: 60px;
+	height: 7px;
+	background-color: #AAAAAA; /* override this */
+	border: 1px;
+	border-color: #888888;
+	border-style: inset;
+	display: inline-block;
+	position: relative;
+}
+
+.barbackground {
+	background-color: #000000;
+	height: 100%;
+	width: 50%; /* override this */
+	position: absolute;
+	right: 0;
+}
+
+.barnumbers {
+	margin-top: 1px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+    position: absolute;
+}
+
+.barnumber {
+	display: inline-block;
+	width: 20%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: 113px;
+	text-align: right;
+	left: 0;
+	right: 0;
+}
+
+.barnumberplus {
+	color: #00EE00;
+	display: inline-block;
+	width: 20%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: 113px;
+	text-align: right;
+	left: 0;
+	right: 0;
+}
+
+.barnumberminus {
+	color: #EE0000;
+	display: inline-block;
+	width: 20%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: 113px;
+	text-align: right;
+	left: 0;
+	right: 0;
+}
+
+.barnumbercenter {
+	display: inline-block;
+	width: 100%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+.barmaxnumber {
+	display: inline-block;
+	width: 20%;
+	position: absolute;
+	margin-left: 113px;
+	margin-right: auto;
+	text-align: left;
+	left: 0;
+	right: 0;
+}
+
+.barmaxnumberplus {
+	color: #00EE00;
+	display: inline-block;
+	width: 20%;
+	position: absolute;
+	margin-left: 113px;
+	margin-right: auto;
+	text-align: left;
+	left: 0;
+	right: 0;
+}
+
+.barmaxnumberminus {
+	color: #EE0000;
+	display: inline-block;
+	width: 20%;
+	position: absolute;
+	margin-left: 113px;
+	margin-right: auto;
+	text-align: left;
+	left: 0;
+	right: 0;
+}
+
+.attributes {
+	margin-left: 12px;
+}
+
+
+
+/* Inventory */
+
+.tile {
+	display: inline-block;
+	position: relative;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	border-width: 0px;
+}
+
+.tileinner {
+	display: inline-block;
+	position: absolute;
+	border-width: 0px;
+	border-radius: 10px;
+	left: 4px;
+	top: 4px;	
+}
+
+.tileinnershift {
+	display: inline-block;
+	position: absolute;
+	border-width: 0px;
+	border-radius: 10px;
+	left: 2px;
+	top: 2px;	
+}
+
+.tileimg {
+	display: inline-block;
+	position: relative;
+	border-width: 0px;
+	background-color: #000000;
+	border-radius: 8px;
+}
+
+.notileimg {
+	display: inline-block;
+	border-radius: 10px;
+}
+
+.amount {
+	position: absolute;
+	right: 3px;
+	bottom: 1px;
+}
+
+.scrollmarker {
+	display: inline-block;
+}
+
+/* Actions */
+.action {
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 15px;
+	border-width: 0px;
+	position: relative;
+}
+
+.actionright {
+	display: inline-block;
+	float: right;
+	margin-right: 15px;
+	border-width: 0px;
+	position: relative;
+}
+
+.imgclip {
+	margin-top: 5px;
+	cursor: pointer;
+	pointer-events: auto;
+	clip-path: polygon(40% 0, 89% 19%, 96% 96%, 0% 96%, 6% 30%);
+}
+
+.lootdoor {
+	position: absolute;
+	top: 10px;
+	left: 17px;
+	text-align: center;
+}
+
+.shortcutaction {
+	position: absolute;
+	left: 11px;
+	bottom: 14px;
+}
+
+.minipiccrop {
+	display: inline-block;
+  overflow: hidden;
+	width: 33px;
+	height: 46px;
+	border-width: 1px;
+	border-color: #888888;
+	border-style: solid;
+}
+
+.minipic {
+	display: inline-block;
+	width: 40px;
+	height: 55px;
+	background-size: 40px 55px;
+	margin: -3px 0 0 -3px;
+}
+
+.grayed { 
+  -webkit-filter: grayscale(100%) invert(0.3);
+  -moz-filter: grayscale(100%) invert(0.3);
+  -ms-filter: grayscale(100%) invert(0.3);
+  -o-filter: grayscale(100%) invert(0.3);
+  filter: grayscale(100%) invert(0.3);
+}
