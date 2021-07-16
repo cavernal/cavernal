@@ -7,14 +7,16 @@ function exportDataToBase64() {
   if (!comment) {
     comment = '';
   }
+  clear();
   var achievements = d.achievements;
   d.achievements = {};
 	d.playerName = htmlEntities(name.replace('@', '#').replace('"', '#').replace('\n', '#').replace('\r', '#'));
   d.comment = htmlEntities(comment.replace('@', '#').replace('"', '#').replace('\n', '#').replace('\r', '#'));
   var data = '** Cavernal gamedata export, visualize it at www.cavernal.com, player "' + d.playerName + '", comment "' + d.comment + '", timestamp "' + d.timestamp + '" ** @' + btoa(JSON.stringify(d));
   outLine(buttonEvent('selectDataExport()', div('dataexport', data)));
+  outLine('');
   if (copyTextToClipboard(data)) {
-    outLine('The gamedata was exported to the clipboard, paste it somewhere and share it!');
+    outLine('The gamedata was exported to the clipboard (if not, right click and copy), paste it somewhere and share it!');
   } else {
     outLine('Select and copy the gamedata, paste it somewhere, and share it!');
   }

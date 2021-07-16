@@ -247,8 +247,11 @@ function buyAttribute(key) {
 		d.strength++;
 		d.attributePoints -= d.strengthWithPoints+1;
 		d.strengthWithPoints++;
-		clear();
+		outLine('');
+		outLine('');
+		outLine('');
 		outLine('You increased your strength to ' + d.strength + '!');
+		outLine('It will now cost ' + (d.strengthWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
 		if (d.strengthWithPoints+1 > d.attributePoints) {
@@ -261,8 +264,11 @@ function buyAttribute(key) {
 		d.dexterity++;
 		d.attributePoints -= d.dexterityWithPoints+1;
 		d.dexterityWithPoints++;
-		clear();
+		outLine('');
+		outLine('');
+		outLine('');
 		outLine('You increased your dexterity to ' + d.dexterity + '!');
+		outLine('It will now cost ' + (d.dexterityWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
 		if (d.dexterityWithPoints+1 > d.attributePoints) {
@@ -275,8 +281,11 @@ function buyAttribute(key) {
 		d.agility++;
 		d.attributePoints -= d.agilityWithPoints+1;
 		d.agilityWithPoints++;
-		clear();
+		outLine('');
+		outLine('');
+		outLine('');
 		outLine('You increased your agility to ' + d.agility + '!');
+		outLine('It will now cost ' + (d.agilityWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
 		if (d.agilityWithPoints+1 > d.attributePoints) {
@@ -290,8 +299,11 @@ function buyAttribute(key) {
 		d.constitution++;
 		d.attributePoints -= d.constitutionWithPoints+1;
 		d.constitutionWithPoints++;
-		clear();
+		outLine('');
+		outLine('');
+		outLine('');
 		outLine('You increased your constitution to ' + d.constitution + '!');
+		outLine('It will now cost ' + (d.constitutionWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
 		if (d.constitutionWithPoints+1 > d.attributePoints) {
@@ -305,8 +317,11 @@ function buyAttribute(key) {
 		d.vitality++;
 		d.attributePoints -= d.vitalityWithPoints+1;
 		d.vitalityWithPoints++;
-		clear();
+		outLine('');
+		outLine('');
+		outLine('');
 		outLine('You increased your vitality to ' + d.vitality + '!');
+		outLine('It will now cost ' + (d.vitalityWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
 		if (d.vitalityWithPoints+1 > d.attributePoints) {
@@ -320,8 +335,11 @@ function buyAttribute(key) {
 		d.intelligence++;
 		d.attributePoints -= d.intelligenceWithPoints+1;
 		d.intelligenceWithPoints++;
-		clear();
+		outLine('');
+		outLine('');
+		outLine('');
 		outLine('You increased your intelligence to ' + d.intelligence + '!');
+		outLine('It will now cost ' + (d.intelligenceWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
 		if (d.intelligenceWithPoints+1 > d.attributePoints) {

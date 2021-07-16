@@ -40,7 +40,9 @@ class ItemAmount {
 }
 
 enum ItemType {
-	Food = 1,
+	GarbageBag = 1,
+
+	Food,
 	Drink,
 
 	Healing,
@@ -72,6 +74,7 @@ enum ItemType {
 	ReagentBodyPart,
 	ReagentTinkering,
 	ReagentNature,
+
 };
 
 var showOrder = [ItemType.Weapon, ItemType.Shield, ItemType.Helmet, ItemType.Armor, ItemType.Pants, ItemType.Boots];
@@ -328,6 +331,8 @@ var itemTypeLogics = {
 			return false;
 		},
 	},
+	[ItemType.GarbageBag]: <ItemTypeLogic>{
+	},
 }
 
 var itemShortcuts = {};
@@ -411,12 +416,11 @@ function generateLoot(l: Loot[]): ItemAmount[] {
 				throw Error('Trying to generate loot with non-existing object ' + item);
 				continue;
 			}
+			if (d.generatedUniqueOnLootItems[item]) {
+				continue;
+			}
 			if (items[item].uniqueOnLoot) {
-				if (d.generatedUniqueOnLootItems[item]) {
-					continue;
-				} else {
-					d.generatedUniqueOnLootItems[item] = true;
-				}
+				d.generatedUniqueOnLootItems[item] = true;
 			}
 			var amount = randomInteger(l[i].itemMinAmount, l[i].itemMaxAmount)
 			if (ret[item]) {
@@ -450,12 +454,11 @@ function generateLoot(l: Loot[]): ItemAmount[] {
 				throw Error('Trying to generate loot with non-existing object ' + item);
 				continue;
 			}
+			if (d.generatedUniqueOnLootItems[item]) {
+				continue;
+			}
 			if (items[item].uniqueOnLoot) {
-				if (d.generatedUniqueOnLootItems[item]) {
-					continue;
-				} else {
-					d.generatedUniqueOnLootItems[item] = true;
-				}
+				d.generatedUniqueOnLootItems[item] = true;
 			}
 			var amount = randomInteger(lootSelectors[chosen].itemMinAmount, lootSelectors[chosen].itemMaxAmount)
 			if (ret[item]) {

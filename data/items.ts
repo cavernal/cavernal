@@ -3523,6 +3523,83 @@ registerItem(<Item>{
 });
 
 /**********************************************************/
+/** GARBAGE BAG *******************************************/
+/**********************************************************/
+
+registerItem(<Item>{
+	name: 'Garbage bag',
+	image: 'garbagebag',
+	description: 'It can be used to throw away all unnecessary items and keep the inventory tidy',
+	type: ItemType.GarbageBag,
+	rarity: Rarity.Common,
+	value: 1,
+	uniqueOnLoot: true,
+	useFunction: function(): boolean {
+		var garbageArray = [ItemType.Weapon, ItemType.Shield, ItemType.Helmet, ItemType.Armor, ItemType.Pants, ItemType.Boots];
+		var threwAwaySomething = false;
+		for (let i in garbageArray) {
+			var type = garbageArray[i];
+			var eq = d.equip[type];
+			var bestItem = '';
+			var hasConsumable = false;
+			if (eq && !items[eq].consumableOnCombat) {
+				bestItem = eq;
+			}
+			if (eq && items[eq].consumableOnCombat) {
+				hasConsumable = true;
+			}
+			if (!bestItem) {
+				// Find the best
+		        for (let i in d.inventory) {
+	                var item = items[d.inventory[i].item];
+	                if (item.type != type) {
+	                	continue;
+	                }
+	                if (item.consumableOnCombat) {
+	                	continue
+	                }
+	                if (!bestItem) {
+	                	bestItem = item.name;
+	                	continue;
+	                }
+	                if (item.attribute > items[bestItem].attribute) {
+	                	bestItem = item.name;
+	                }
+	            }
+			}
+
+	        var j = 0;
+	        while (j < d.inventory.length) {
+                var item = items[d.inventory[j].item];
+                if (item.type != type) {
+                	j++;
+                	continue;
+                }
+                if (item.attribute <= items[bestItem].attribute && item.name != bestItem && item.name != eq && item.rarity > Rarity.Epic) {
+                	if (!threwAwaySomething) {
+                		outLine('You threw away:');
+                		outLine('');
+                		threwAwaySomething = true;
+                	}
+                	d.inventory.splice(j, 1);
+					outLine(itemTile(item.name, 1, false, false, false, false, false) + ' ' + item.name);
+					d.generatedUniqueOnLootItems[item.name] = true;
+                } else {
+                	j++;
+                }
+            }
+            if (hasConsumable) {
+            	d.lastequip[type] = bestItem;
+            }
+		}
+		if (!threwAwaySomething) {
+       		outLine('You had no items that were weaker than your currently equipped ones')
+       	}
+		return true;
+	},
+});
+
+/**********************************************************/
 /** ARTIFACTS *********************************************/
 /**********************************************************/
 

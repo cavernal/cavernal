@@ -2,8 +2,8 @@ function generateMobs() {
 
 mobs = {};
 
-var WATERFACTOR = 0.04;
-var FOODFACTOR = 0.195;
+var WATERFACTOR = 0.05;
+var FOODFACTOR = 0.21;
 var POTIONFACTOR = 0.2;
 
 registerMob(<Mob>{
@@ -303,6 +303,7 @@ registerMob(<Mob>{
 	defense: 10,
 	armor: 10,
 	loot: [
+		lootItemProbability(1, 'Garbage bag'), // only dropped by the Ghoul
 		lootItemProbability(1, 'Bronze coin'),
 		lootItemProbability(1/2, 'Bronze coin', 1, 5),
 		lootItemProbability(1, 'Copper coin', 3, 3),

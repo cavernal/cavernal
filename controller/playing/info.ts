@@ -1,12 +1,14 @@
 var infoDoorN = -1;
 var infoItemN = -1;
 var infoEquippedN = -1;
+var infoAttributeKey = '';
 
 function infoNothing() {
 	outputInfo('');
 	infoDoorN = -1;
 	infoItemN = -1;
 	infoEquippedN = -1;
+	infoAttributeKey = '';
 }
 
 function infoPortrait() {
@@ -39,20 +41,7 @@ function infoDrink() {
 }
 
 function infoAttribute(key) {
-	var common = line('') + line('') + 'You can increase your attributes by spending the attribute points (' + img('charattrpoints') + ') that you get when you level up';
-	if (key == keyStrength) {
-		outputInfo(line(img('attrstrength') + ' Strength') + line('') + 'Strength is the attribute that enables you to wear and wield heavy equipment' + common);
-	} else if (key == keyDexterity) {
-		outputInfo(line(img('attrdexterity') + ' Dexterity') + line('') + 'Dexterity is the attribute that makes you defend better with your shield' + common);
-	} else if (key == keyAgility) {
-		outputInfo(line(img('attragility') + ' Agility') + line('') + 'Agility is the attribute that makes you attack and defend faster' + common);
-	} else if (key == keyConstitution) {
-		outputInfo(line(img('attrconstitution') + ' Constitution') + line('') + 'Constitution is the attribute that increases your hit points, food points, and drink points' + common);
-	} else if (key == keyVitality) {
-		outputInfo(line(img('attrvitality') + ' Vitality') + line('') + 'Vitality is the attribute that makes you heal faster' + common);
-	} else if (key == keyIntelligence) {
-		outputInfo(line(img('attrintelligence') + ' Intelligence') + line('') + 'Intelligence is the attribute that enables you to use more complex magic equipment' + common);
-	} 
+	infoAttributeKey = key;
 }
 
 function infoDoor(n) {
@@ -105,6 +94,9 @@ function updateInfo() {
 	if (infoDoorN >= d.doors.length) {
 		infoNothing();
 	}
+	if (infoAttributeKey) {
+		infoAttributeShow(infoAttributeKey);
+	}
 	if (infoDoorN != -1) {
 		var dr = d.doors[infoDoorN];
 		if (dr.type == DoorType.Mob) {
@@ -118,6 +110,28 @@ function updateInfo() {
 		}
 	}
 	updateInfoNoDoor();
+}
+
+function infoAttributeShow(key) {
+	if (key == keyStrength) {
+		outputInfo(line(img('attrstrength') + ' Strength') + line('') + 'Strength is the attribute that enables you to wear and wield heavy equipment' + 
+			line('') + line('') + 'You can increase it by spending ' + (d.strengthWithPoints+1) + ' attribute point' + s(d.strengthWithPoints+1) + ' (' + img('charattrpoints') + '), which you get when you level up');
+	} else if (key == keyDexterity) {
+		outputInfo(line(img('attrdexterity') + ' Dexterity') + line('') + 'Dexterity is the attribute that makes you defend better with your shield' +
+			line('') + line('') + 'You can increase it by spending ' + (d.dexterityWithPoints+1) + ' attribute point' + s(d.dexterityWithPoints+1) + ' (' + img('charattrpoints') + '), which you get when you level up');
+	} else if (key == keyAgility) {
+		outputInfo(line(img('attragility') + ' Agility') + line('') + 'Agility is the attribute that makes you attack and defend faster' +
+			line('') + line('') + 'You can increase it by spending ' + (d.agilityWithPoints+1) + ' attribute point' + s(d.agilityWithPoints+1) + ' (' + img('charattrpoints') + '), which you get when you level up');
+	} else if (key == keyConstitution) {
+		outputInfo(line(img('attrconstitution') + ' Constitution') + line('') + 'Constitution is the attribute that increases your hit points, food points, and drink points' +
+			line('') + line('') + 'You can increase it by spending ' + (d.constitutionWithPoints+1) + ' attribute point' + s(d.constitutionWithPoints+1) + ' (' + img('charattrpoints') + '), which you get when you level up');
+	} else if (key == keyVitality) {
+		outputInfo(line(img('attrvitality') + ' Vitality') + line('') + 'Vitality is the attribute that makes you heal faster' + 
+			line('') + line('') + 'You can increase it by spending ' + (d.vitalityWithPoints+1) + ' attribute point' + s(d.vitalityWithPoints+1) + ' (' + img('charattrpoints') + '), which you get when you level up');
+	} else if (key == keyIntelligence) {
+		outputInfo(line(img('attrintelligence') + ' Intelligence') + line('') + 'Intelligence is the attribute that enables you to use more complex magic equipment' + 
+			line('') + line('') + 'You can increase it by spending ' + (d.intelligenceWithPoints+1) + ' attribute point' + s(d.intelligenceWithPoints+1) + ' (' + img('charattrpoints') + '), which you get when you level up');
+	} 
 }
 
 function infoMobShow(mob) {
