@@ -9,6 +9,7 @@ function infoNothing() {
 	infoItemN = -1;
 	infoEquippedN = -1;
 	infoAttributeKey = '';
+	updateInfo();
 }
 
 function infoPortrait() {
@@ -24,6 +25,7 @@ function infoAttrPoints() {
 }
 
 function infoItem(n) {
+	infoNothing();
 	infoItemN = n;
 	updateInfo();
 }
@@ -41,10 +43,13 @@ function infoDrink() {
 }
 
 function infoAttribute(key) {
+	infoNothing();
 	infoAttributeKey = key;
+	updateInfo();
 }
 
 function infoDoor(n) {
+	infoNothing();
 	infoDoorN = n;
 	updateInfo();
 }

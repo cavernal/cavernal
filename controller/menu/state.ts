@@ -100,6 +100,9 @@ function updateLogo() {
 }
 
 function updateTrophy() {
+	if (!d.achievements) {
+		d.achievements = {};
+	}
 	var anyAchievement = false;
 	for (let i = 0; i < achievements.length; i++) {
 		var achievement = achievements[i];

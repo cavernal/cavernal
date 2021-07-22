@@ -8,7 +8,7 @@
 <head>
 <title>Cavernal</title>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
 <meta property="og:url" content="https://www.cavernal.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cavernal">

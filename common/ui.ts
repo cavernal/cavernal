@@ -9,6 +9,17 @@ var FADESPEED = 2;
 
 
 function handleResize(evt) {
+    var phoneMinus = 0;
+    if (isTouchDevice()) {
+      phoneMinus = 240;
+	}
+    var x = document.getElementsByClassName('all')[0] as HTMLElement;
+    x.style.height = ''+(860-phoneMinus)+'px';
+    x.style.marginTop = '-'+(430-(phoneMinus/2))+'px';
+    var y = document.getElementsByClassName('inventory')[0] as HTMLElement;
+    y.style.height = ''+(824-phoneMinus)+'px';
+    var z = document.getElementsByClassName('console')[0] as HTMLElement;
+    z.style.height = ''+(379-phoneMinus)+'px';
 	var all = (document.getElementsByClassName("all")[0] as HTMLElement);
 	var maxWidth = all.offsetWidth;
 	var maxHeight = all.offsetHeight;
@@ -16,9 +27,10 @@ function handleResize(evt) {
     var height = window.innerHeight;
     var scale = 1;
     if(width < maxWidth || height < maxHeight) {
-	    scale = Math.min(width/maxWidth, height/maxHeight);
+	    scale = Math.min(width/maxWidth, height/maxHeight)*0.97;
     }
     all.style.webkitTransform = 'scale(' + scale + ')';
+    all.style.transform = 'scale(' + scale + ')';
 };
 
 function keyDownEvent(evt) {
@@ -61,6 +73,7 @@ function onClickEvent(evt) {
 	if (isTouchDevice()) {
 		inventorySelect(-1);
 		showAttributeDiff('');
+		infoNothing();
 	}
 }
 
@@ -419,4 +432,13 @@ function smallButtonImage(text, shortcut='') {
 		shortcutText = shortcutDiv(shortcut);
 	}
 	return img('button', div('smallbuttontext',text) + shortcutText, 'smallbuttonimage');
+}
+
+function stopPropagation() {
+	if (!window.event) {
+		return;
+	}
+	if (window.event instanceof KeyboardEvent || window.event instanceof MouseEvent || window.event instanceof TouchEvent){
+		try { window.event.cancelBubble = true; } catch (e) { };
+	}
 }

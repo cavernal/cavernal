@@ -254,8 +254,11 @@ function buyAttribute(key) {
 		outLine('It will now cost ' + (d.strengthWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
-		if (d.strengthWithPoints+1 > d.attributePoints) {
+		if (d.strengthWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
+			infoNothing();
+			updateInfo();
+			stopPropagation();
 		}
 		saveData();
 		generateMobWinCounts();
@@ -271,8 +274,11 @@ function buyAttribute(key) {
 		outLine('It will now cost ' + (d.dexterityWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
-		if (d.dexterityWithPoints+1 > d.attributePoints) {
+		if (d.dexterityWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
+			infoNothing();
+			updateInfo();
+			stopPropagation();
 		}
 		saveData();
 		generateMobWinCounts();
@@ -288,8 +294,11 @@ function buyAttribute(key) {
 		outLine('It will now cost ' + (d.agilityWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
-		if (d.agilityWithPoints+1 > d.attributePoints) {
+		if (d.agilityWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
+			infoNothing();
+			updateInfo();
+			stopPropagation();
 		}
 		saveData();
 		generateMobWinCounts();
@@ -306,8 +315,11 @@ function buyAttribute(key) {
 		outLine('It will now cost ' + (d.constitutionWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
-		if (d.constitutionWithPoints+1 > d.attributePoints) {
+		if (d.constitutionWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
+			infoNothing();
+			updateInfo();
+			stopPropagation();
 		}
 		saveData();
 		generateMobWinCounts();
@@ -324,8 +336,11 @@ function buyAttribute(key) {
 		outLine('It will now cost ' + (d.vitalityWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
-		if (d.vitalityWithPoints+1 > d.attributePoints) {
+		if (d.vitalityWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
+			infoNothing();
+			updateInfo();
+			stopPropagation();
 		}
 		saveData();
 		generateMobWinCounts();
@@ -342,8 +357,11 @@ function buyAttribute(key) {
 		outLine('It will now cost ' + (d.intelligenceWithPoints+1) + ' attribute points to increase further');
 		updatePlayerStats();
 		updatePlayerValues();
-		if (d.intelligenceWithPoints+1 > d.attributePoints) {
+		if (d.intelligenceWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
+			infoNothing();
+			updateInfo();
+			stopPropagation();
 		}
 		saveData();
 		generateMobWinCounts();

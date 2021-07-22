@@ -3,13 +3,13 @@
       'Error occured: ' + errorMsg + ' at line ' + lineNumber + '\nThis is not expected. ' +
       'Press "OK" to continue or press "cancel" to abort this game run and restart the game, which may fix it');
    if (result) {
-      return;
+      return true;
    } else {
       var achievements = d.achievements;
       d = <Data>{};
       d.achievements = achievements;
-      setState(State.Menu);
+      d.state = State.Menu;
       saveData();
-      update();
+      document.location.reload();
    }
 }

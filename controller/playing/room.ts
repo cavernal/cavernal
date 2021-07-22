@@ -143,6 +143,10 @@ function openDoor(n) {
     if (!isDoorValid(n)) {
     	return;
     }
+	if (isTouchDevice()) {
+		inventorySelected = -1;
+		showAttribute = '';
+	}
     clear();
 	outLine('You opened door ' + (n+1));
 
