@@ -289,6 +289,12 @@ function inventoryUseLogic() {
 		return;
 	}
 
+	if (isTouchDevice()) {
+		inventorySelected = -1;
+		infoNothing();
+		updateInfo();
+		stopPropagation();
+	}
 	var typeLogics = itemTypeLogics[selected.type];
 	if (!selected.useFunction && !typeLogics.useItem) {
 		outLine('You just examined ' + selected.name);
@@ -303,7 +309,7 @@ function inventoryUseLogic() {
 			return;
 		}
 	}
-	if (typeLogics.consumable || items[selectedItem().item].consumable) {
+	if (typeLogics.consumable || selected.consumable) {
 		outSpace();
 		inventoryConsumeByName(selected.name);
 	}
@@ -312,13 +318,8 @@ function inventoryUseLogic() {
 	var keepSelected = inventorySelected;
 	sortInventory();
 	inventorySelected = keepSelected;
-	if (inventorySelected >= d.inventory.length || isTouchDevice()) {
+	if (inventorySelected >= d.inventory.length) {
 		inventorySelected = -1;
-		if (isTouchDevice()) {
-			infoNothing();
-			updateInfo();
-			stopPropagation();
-		}
 	}
 	saveData();
 	generateMobWinCounts();
