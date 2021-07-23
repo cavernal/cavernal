@@ -87,7 +87,7 @@ function updateInfoNoDoor() {
 			return;
 		}
 	}
-	if (infoItemN >= d.inventory.length) {
+	if (!d.inventory && infoItemN >= d.inventory.length) {
 		infoNothing();
 	}
 	if (infoItemN != -1) {
@@ -96,7 +96,7 @@ function updateInfoNoDoor() {
 }
 
 function updateInfo() {
-	if (!d.doors || infoDoorN >= d.doors.length) {
+	if (!d.doors && infoDoorN >= d.doors.length) {
 		infoNothing();
 	}
 	if (infoAttributeKey) {
