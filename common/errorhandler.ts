@@ -9,6 +9,11 @@
       d = <Data>{};
       d.achievements = achievements;
       d.state = State.Menu;
+      d.equip = {};
+      d.lastequip = {};
+      d.generatedUniqueRooms = {};
+      d.generatedUniqueOnLootItems = {};
+      d.doors = [<Door>{type: DoorType.Transcend}];
       saveData();
       document.location.reload();
    }

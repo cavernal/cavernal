@@ -96,7 +96,7 @@ function updateInfoNoDoor() {
 }
 
 function updateInfo() {
-	if (infoDoorN >= d.doors.length) {
+	if (!d.doors || infoDoorN >= d.doors.length) {
 		infoNothing();
 	}
 	if (infoAttributeKey) {
