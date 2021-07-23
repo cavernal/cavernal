@@ -314,9 +314,11 @@ function inventoryUseLogic() {
 	inventorySelected = keepSelected;
 	if (inventorySelected >= d.inventory.length || isTouchDevice()) {
 		inventorySelected = -1;
-		infoNothing();
-		updateInfo();
-		stopPropagation();
+		if (isTouchDevice()) {
+			infoNothing();
+			updateInfo();
+			stopPropagation();
+		}
 	}
 	saveData();
 	generateMobWinCounts();

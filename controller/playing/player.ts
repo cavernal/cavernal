@@ -256,9 +256,11 @@ function buyAttribute(key) {
 		updatePlayerValues();
 		if (d.strengthWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
-			infoNothing();
-			updateInfo();
-			stopPropagation();
+			if (isTouchDevice()) {
+				infoNothing();
+				updateInfo();
+				stopPropagation();
+			}
 		}
 		saveData();
 		generateMobWinCounts();
@@ -276,9 +278,11 @@ function buyAttribute(key) {
 		updatePlayerValues();
 		if (d.dexterityWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
-			infoNothing();
-			updateInfo();
-			stopPropagation();
+			if (isTouchDevice()) {
+				infoNothing();
+				updateInfo();
+				stopPropagation();
+			}
 		}
 		saveData();
 		generateMobWinCounts();
@@ -296,9 +300,11 @@ function buyAttribute(key) {
 		updatePlayerValues();
 		if (d.agilityWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
-			infoNothing();
-			updateInfo();
-			stopPropagation();
+			if (isTouchDevice()) {
+				infoNothing();
+				updateInfo();
+				stopPropagation();
+			}
 		}
 		saveData();
 		generateMobWinCounts();
@@ -317,9 +323,11 @@ function buyAttribute(key) {
 		updatePlayerValues();
 		if (d.constitutionWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
-			infoNothing();
-			updateInfo();
-			stopPropagation();
+			if (isTouchDevice()) {
+				infoNothing();
+				updateInfo();
+				stopPropagation();
+			}
 		}
 		saveData();
 		generateMobWinCounts();
@@ -338,9 +346,11 @@ function buyAttribute(key) {
 		updatePlayerValues();
 		if (d.vitalityWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
-			infoNothing();
-			updateInfo();
-			stopPropagation();
+			if (isTouchDevice()) {
+				infoNothing();
+				updateInfo();
+				stopPropagation();
+			}
 		}
 		saveData();
 		generateMobWinCounts();
@@ -359,9 +369,11 @@ function buyAttribute(key) {
 		updatePlayerValues();
 		if (d.intelligenceWithPoints+1 > d.attributePoints || isTouchDevice()) {
 			showAttributeDiff('');
-			infoNothing();
-			updateInfo();
-			stopPropagation();
+			if (isTouchDevice()) {
+				infoNothing();
+				updateInfo();
+				stopPropagation();
+			}
 		}
 		saveData();
 		generateMobWinCounts();
