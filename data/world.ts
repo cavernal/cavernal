@@ -477,7 +477,6 @@ rooms.push(<Room>{
 	depth: 3, fromStep: 86, toStep: 90, chance: 1, minDoors: 2, maxDoors: 3,
 	doors: [
 		mobChance(4, 'Swarmer'),
-		mobChance(4, 'Lizardman'),
 		mobChance(4, 'Howler', true, true),
 	],
 });

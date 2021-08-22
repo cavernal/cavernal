@@ -46,8 +46,6 @@
     <div class="inventory" id="inventory"></div>
   </div>
   <div class="version">
-  <div class="restartline">Press <div class="buttonrestart" onclick="shiftKeyPress('F12');">[SHIFT+12]</div> to restart game
-  &bull;</div>
   Copyright &copy; 2021 <a href="https://www.luisquesada.com/">Luis Quesada Torres</a>
   &bull;
   Sponsored by the <a href="https://www.elezeta.com">Elezeta</a> music project
@@ -56,7 +54,7 @@
   Cavernal
   %%VERSION%%
   (<a href="https://github.com/cavernal">source code</a>)
-  
+  <div class="restartline">&bull; Press <div class="buttonrestart" onclick="shiftKeyPress('F12');">[<u>SHIFT+12</u>]</div> to restart game</div>
   </div>
 </div>
 
