@@ -414,7 +414,6 @@ rooms.push(<Room>{
 		mobChance(4, 'Mutant spider'),
 		mobChance(4, 'Barbarian'),
 		mobChance(4, 'Mage'),
-		mobChance(1, 'Lurker'),
 	],
 });
 
@@ -423,7 +422,6 @@ rooms.push(<Room>{
 	doors: [
 		mobChance(4, 'Barbarian'),
 		mobChance(4, 'Mage'),
-		mobChance(1, 'Lurker'),
 	],
 });
 
@@ -440,7 +438,7 @@ rooms.push(<Room>{
 	depth: 3, fromStep: 66, toStep: 70, chance: 1, minDoors: 2, maxDoors: 3,
 	doors: [
 		mobChance(4, 'Mage'),
-		mobChance(4, 'Lurker'),
+		mobChance(4, 'Minion'),
 		mobChance(4, 'Great imp', true),
 	],
 });
